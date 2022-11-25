@@ -1,0 +1,88 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+#gameBoard{
+	width: 20vw;
+	height: 20vw;
+	min-width: 300px;
+	min-height: 300px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+}
+
+#cell{
+	background: white;
+	border: 1px solid black;
+	font-size: 5em;
+	text-align: center;
+}
+
+#gameBoard :nth-child(1), #gameBoard :nth-child(2), #gameBoard :nth-child(3){
+	border-top: none;
+}
+
+#gameBoard :nth-child(3n){
+	border-right: none;
+}
+
+#gameBoard :nth-child(3n + 1){
+	border-left: none;
+}
+
+#gameBoard :nth-child(7), #gameBoard :nth-child(8), #gameBoard :nth-child(9){
+	border-bottom: none;
+}
+
+#winWindow{
+	width: 100vw;
+	height: 100vh;
+	color: white;
+	background: rgba(50, 50, 50, 0.9);
+	position: fixed;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#winWindow > *{
+	margin: 0.3em;
+}
+
+#winWindow > p{
+	font-size: 2em;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+
+#restartButton{
+	color: white;
+	background: rgba(30, 30, 30, 0.9);
+	border-radius: 0.3em;
+	font-size: 1.5em;
+	font-family: monospace;
+	font-weight: bold;
+}
+
+#timer{
+	top: 5%;
+	right: 5%;
+	position: absolute;
+	border: 1px solid black;
+	font-size: 1.2em;
+	font-weight: bold;
+	font-family: monospace;
+}
